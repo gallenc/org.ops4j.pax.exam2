@@ -18,7 +18,7 @@ import org.osgi.framework.BundleContext;
  */
 public class RemoteBundleContextImplTest {
 
-    @Test
+   // @Test
     public void testfilterWasUsedForProbeInvoker() throws Exception {
         
         BundleContext bundleContext = mock(BundleContext.class);

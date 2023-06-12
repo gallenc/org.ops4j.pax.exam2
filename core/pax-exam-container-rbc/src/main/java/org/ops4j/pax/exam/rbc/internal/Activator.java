@@ -141,7 +141,8 @@ public class Activator implements BundleActivator {
             + " to RMI registry");
         remoteBundleContext = new RemoteBundleContextImpl(bundleContext.getBundle(0)
             .getBundleContext());
-        Remote remoteStub = UnicastRemoteObject.exportObject(remoteBundleContext, 0);
+        // changed port from 0 which creates random port to specific port
+        Remote remoteStub = UnicastRemoteObject.exportObject(remoteBundleContext, getPort());
         _registry.rebind(getName(), remoteStub);
     }
 
